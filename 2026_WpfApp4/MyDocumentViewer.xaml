@@ -10,11 +10,30 @@
     <DockPanel>
         <ToolBarTray Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" DockPanel.Dock="Top" Background="AliceBlue">
             <ToolBar x:Name="ApplicationToolBar" Height="40" Width="377" Background="Beige">
-
-        </ToolBar>
-        <ToolBar x:Name="EditToolBar" Height="40" Width="377" Background="#FFE4E482">
-
-        </ToolBar>
+                <Button x:Name="NewButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/new.png"/>
+                </Button>
+                <Button x:Name="OpenButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/open.jpg"/>
+                </Button>
+                <Button x:Name="SaveButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/save.jpg"/>
+                </Button>
+                <Button x:Name="TrachButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/trash.jpg"/>
+                </Button>
+            </ToolBar>
+            <ToolBar x:Name="EditingToolBar" Height="40" Width="377" Background="#FFE4E482">
+                <ToggleButton x:Name="BoldButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/bold.png"/>
+                </ToggleButton>
+                <ToggleButton x:Name="ItalicButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/italic.png"/>
+                </ToggleButton>
+                <ToggleButton x:Name="UnderlineButton" Height="38" Width="38">
+                    <Image Height="32" Width="32" Source="/img/underline.png"/>
+                </ToggleButton>
+            </ToolBar>
         </ToolBarTray>
         <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"></StatusBar>
     <RichTextBox x:Name="MainRichTextBox">
