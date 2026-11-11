@@ -28,7 +28,7 @@
                     <Image Height="32" Width="32" Source="/img/trash.jpg"/>
                 </Button>
             </ToolBar>
-            <ToolBar x:Name="EditingToolBar" Height="40" Width="533" Background="#FFE4E482">
+            <ToolBar x:Name="EditingToolBar" Height="40" Width="548" Background="#FFE4E482">
                 <ToggleButton x:Name="BoldButton" Height="38" Width="38">
                     <Image Height="32" Width="32" Source="/img/bold.png"/>
                 </ToggleButton>
@@ -39,13 +39,13 @@
                     <Image Height="32" Width="32" Source="/img/underline.png"/>
                 </ToggleButton>
                 <xctk:ColorPicker x:Name="FontColorPicker" Width="120" Height="38"/>
-                <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="38" Margin="5,0,0,0"/>
+                <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" Width="127" Height="38"/>
                 <ComboBox x:Name="FontSizeComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="38" Margin="5,0,0,0"/>
             </ToolBar>
         </ToolBarTray>
         <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"></StatusBar>
-    <RichTextBox x:Name="MainRichTextBox">
-        <FlowDocument></FlowDocument>
-    </RichTextBox>
+        <RichTextBox x:Name="MainRichTextBox">
+            <FlowDocument></FlowDocument>
+        </RichTextBox>
     </DockPanel>
 </Window>
