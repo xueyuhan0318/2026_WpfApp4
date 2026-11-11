@@ -26,7 +26,8 @@ namespace _2026_WpfApp4
 
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
+            MyDocumentViewer newWindow = new MyDocumentViewer();
+            newWindow.Show();
         }
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
