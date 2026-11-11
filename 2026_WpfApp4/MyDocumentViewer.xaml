@@ -12,7 +12,7 @@
             <ToolBar x:Name="ApplicationToolBar" Height="40" Width="377" Background="Beige">
 
         </ToolBar>
-        <ToolBar x:Name="EditToolBar" Height="40" Width="377" Background="Beige">
+        <ToolBar x:Name="EditToolBar" Height="40" Width="377" Background="#FFE4E482">
 
         </ToolBar>
         </ToolBarTray>
