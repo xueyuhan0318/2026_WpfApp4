@@ -23,5 +23,20 @@ namespace _2026_WpfApp4
         {
             InitializeComponent();
         }
+
+        private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }
