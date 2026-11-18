@@ -19,9 +19,10 @@ namespace _2026_WpfApp4
     /// </summary>
     public partial class MyDocumentViewer : Window
     {
+        Color fontColor = Colors.Black;
         public MyDocumentViewer()
         {
-            InitializeComponent();
+            InitializeComponent()
         }
 
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
