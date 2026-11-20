@@ -22,7 +22,14 @@ namespace _2026_WpfApp4
         Color fontColor = Colors.Black;
         public MyDocumentViewer()
         {
-            InitializeComponent()
+            InitializeComponent();
+            FontColorPicker.SelectedColor = fontColor;
+
+            foreach (FontFamily font in Fonts.SystemFontFamilies)
+            {
+                FontFamilyComboBox.Items.Add(font);
+            }
+            FontFamilyComboBox.SelectedIndex = 1;
         }
 
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
