@@ -29,7 +29,13 @@ namespace _2026_WpfApp4
             {
                 FontFamilyComboBox.Items.Add(font);
             }
-            FontFamilyComboBox.SelectedIndex = 1;
+            FontFamilyComboBox.SelectedIndex = 0;
+
+            FontSizeComboBox.ItemsSource = new List<double>() 
+            { 
+                8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 
+            };
+            FontSizeComboBox.SelectedIndex = 4;
         }
 
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -46,6 +52,31 @@ namespace _2026_WpfApp4
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
+        }
+
+        private void FontColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            fontColor = (Color)e.NewValue;
+            SolidColorBrush fontBrush = new SolidColorBrush(fontColor);
+            MainRichTextBox.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, fontBrush);
+        }
+
+        private void FontFamilyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FontFamilyComboBox.SelectedItem != null)
+            {
+                FontFamily selectedFont = (FontFamily)FontFamilyComboBox.SelectedItem;
+                MainRichTextBox.Selection.ApplyPropertyValue(TextElement.FontFamilyProperty, selectedFont);
+            }
+        }
+
+        private void FontSizeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FontSizeComboBox.SelectedItem != null)
+            {
+                double selectedFontSize = (double)FontSizeComboBox.SelectedItem;
+                MainRichTextBox.Selection.ApplyPropertyValue(TextElement.FontSizeProperty, selectedFontSize);
+            }
         }
     }
 }

@@ -38,9 +38,9 @@
                 <ToggleButton x:Name="UnderlineButton" Height="38" Width="38">
                     <Image Height="32" Width="32" Source="/img/underline.png"/>
                 </ToggleButton>
-                <xctk:ColorPicker x:Name="FontColorPicker" Width="120" Height="38"/>
-                <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" Width="150" Height="38"/>
-                <ComboBox x:Name="FontSizeComboBox" HorizontalAlignment="Left" Width="150" Height="38"/>
+                <xctk:ColorPicker x:Name="FontColorPicker" Width="120" Height="38" SelectedColorChanged="FontColorPicker_SelectedColorChanged"/>
+                <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" Width="150" Height="38" SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
+                <ComboBox x:Name="FontSizeComboBox" HorizontalAlignment="Left" Width="150" Height="38" SelectionChanged="FontSizeComboBox_SelectionChanged"/>
             </ToolBar>
         </ToolBarTray>
         <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"></StatusBar>
