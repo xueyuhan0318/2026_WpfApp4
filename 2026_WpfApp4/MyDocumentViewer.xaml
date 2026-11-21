@@ -24,18 +24,18 @@
                 <Button x:Name="SaveButton" Height="38" Width="38" Command="ApplicationCommands.Save">
                     <Image Height="32" Width="32" Source="/img/save.jpg"/>
                 </Button>
-                <Button x:Name="TrachButton" Height="38" Width="38">
+                <Button x:Name="TrachButton" Height="38" Width="38" Click="TrachButton_Click">
                     <Image Height="32" Width="32" Source="/img/trash.jpg"/>
                 </Button>
             </ToolBar>
             <ToolBar x:Name="EditingToolBar" Width="568" Background="#FFE4E482" Margin="0,0,0,-10">
-                <ToggleButton x:Name="BoldButton" Height="38" Width="38">
+                <ToggleButton x:Name="BoldButton" Height="38" Width="38" Command="EditingCommands.ToggleBold">
                     <Image Height="32" Width="32" Source="/img/bold.png"/>
                 </ToggleButton>
-                <ToggleButton x:Name="ItalicButton" Height="38" Width="38">
+                <ToggleButton x:Name="ItalicButton" Height="38" Width="38" Command="EditingCommands.ToggleItalic">
                     <Image Height="32" Width="32" Source="/img/italic.png"/>
                 </ToggleButton>
-                <ToggleButton x:Name="UnderlineButton" Height="38" Width="38">
+                <ToggleButton x:Name="UnderlineButton" Height="38" Width="38" Command="EditingCommands.ToggleUnderline">
                     <Image Height="32" Width="32" Source="/img/underline.png"/>
                 </ToggleButton>
                 <xctk:ColorPicker x:Name="FontColorPicker" Width="120" Height="38" SelectedColorChanged="FontColorPicker_SelectedColorChanged"/>
@@ -44,8 +44,8 @@
             </ToolBar>
         </ToolBarTray>
         <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"></StatusBar>
-        <RichTextBox x:Name="MainRichTextBox" Height="362">
-            <FlowDocument></FlowDocument>
+        <RichTextBox x:Name="MainRichTextBox" Height="362" SelectionChanged="MainRichTextBox_SelectionChanged">
+            <FlowDocument/>
         </RichTextBox>
     </DockPanel>
 </Window>

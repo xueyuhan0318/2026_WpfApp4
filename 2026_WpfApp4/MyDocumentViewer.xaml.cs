@@ -78,5 +78,31 @@ namespace _2026_WpfApp4
                 MainRichTextBox.Selection.ApplyPropertyValue(TextElement.FontSizeProperty, selectedFontSize);
             }
         }
+
+        private void MainRichTextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            var property_bold = MainRichTextBox.Selection.GetPropertyValue(TextElement.FontWeightProperty);
+            BoldButton.IsChecked = (property_bold != DependencyProperty.UnsetValue) && (property_bold.Equals(FontWeights.Bold));
+
+            var property_italic = MainRichTextBox.Selection.GetPropertyValue(TextElement.FontStyleProperty);
+            ItalicButton.IsChecked = (property_italic != DependencyProperty.UnsetValue) && (property_italic.Equals(FontStyles.Italic));
+
+            var property_underline = MainRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            UnderlineButton.IsChecked = (property_underline != DependencyProperty.UnsetValue) && (property_underline.Equals(TextDecorations.Underline));
+
+            var property_fontFamily = MainRichTextBox.Selection.GetPropertyValue(TextElement.FontFamilyProperty);
+            FontFamilyComboBox.SelectedItem = property_fontFamily;
+
+            var property_fontSize = MainRichTextBox.Selection.GetPropertyValue(TextElement.FontSizeProperty);
+            FontSizeComboBox.SelectedItem = property_fontSize;
+
+            var property_fontColor = MainRichTextBox.Selection.GetPropertyValue(TextElement.ForegroundProperty);
+            FontColorPicker.SelectedColor = ((SolidColorBrush)property_fontColor).Color;
+        }
+
+        private void TrachButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainRichTextBox.Document.Blocks.Clear();
+        }
     }
 }
