@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace _2026_WpfApp4
 {
@@ -46,12 +48,38 @@ namespace _2026_WpfApp4
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*",
+                DefaultExt = ".rtf"
+            };
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                TextRange range = new TextRange(MainRichTextBox.Document.ContentStart, MainRichTextBox.Document.ContentEnd);
+                FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open);
+                range.Load(fileStream, DataFormats.Rtf);
+                fileStream.Close();
+            }
         }
 
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog()
+            {
+                Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*",
+                DefaultExt = ".rtf",
+                AddExtension = true
+            };
 
+            if (saveFileDialog.ShowDialog() == true)
+            { 
+                TextRange range = new TextRange(MainRichTextBox.Document.ContentStart, MainRichTextBox.Document.ContentEnd);
+                FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                range.Save(fileStream, DataFormats.Rtf);
+                fileStream.Close();
+
+            }
         }
 
         private void FontColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
